@@ -1,5 +1,4 @@
-# SnakeGame
-A snake game created using Angular JS
+
 # SnakeGame
 A snake game created using Angular JS
 
