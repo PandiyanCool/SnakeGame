@@ -1,4 +1,4 @@
-var app = angular.module('plunker', []);
+var app = angular.module('plunker', ['ngMaterial']);
 
 app.controller('MainCtrl', function ($scope, $window, $timeout) {
   $scope.name = 'Gamer';
@@ -142,4 +142,9 @@ app.controller('MainCtrl', function ($scope, $window, $timeout) {
   });
 
 
+}).config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('dark-grey').backgroundPalette('grey').dark();
+  $mdThemingProvider.theme('dark-orange').backgroundPalette('orange').dark();
+  $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
+  $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
 });

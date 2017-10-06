@@ -10,20 +10,62 @@
   <link rel="stylesheet" href="style.css" />
   <script data-require="angular.js@1.5.x" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js" data-semver="1.5.11"></script>
   <script src="app.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
 </head>
 
 <body ng-controller="MainCtrl">
-  <p>Hello {{name}}! your score is {{score}}</p>
-  <div id="startGame" ng-click="startGame()">Start</div>
-  <div class="row">
-    <div class="col-md-6">
-      <div id="snakeCell">
-        <div class="row" ng-repeat="cell in board">
-          <div class="column" ng-style="{'background-color': paintCell($parent.$index, $index)}" ng-repeat="row in cell track by $index"
-            ng-class="paintCell($parent.$index, $index)" ></div>
-        </div>
+  <div>
+    <md-toolbar class="md-info">
+      <div class="md-toolbar-tools">
+        <h2 class="md-flex">Lets play with snake!</h2>
       </div>
-    </div>
+    </md-toolbar>
+    <md-content flex layout-padding>
+
+
+
+    </md-content>
   </div>
+  <md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="50" layout="column">
+
+      <md-card md-theme="{{ showDarkTheme ? 'dark-orange' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline"><md-button class="md-raised md-primary"  ng-click="startGame()">Start</md-button></span>
+            <span class="md-subhead">Hello {{name}}! your score is {{score}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <div id="snakeCell">
+          <div class="row" ng-repeat="cell in board">
+            <div class="column" ng-style="{'background-color': paintCell($parent.$index, $index)}" ng-repeat="row in cell track by $index"
+              ng-class="paintCell($parent.$index, $index)"></div>
+          </div>
+        </div>
+
+      </md-card>
+    </div>
+
+  </md-content>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
 </body>
+
 </html>
